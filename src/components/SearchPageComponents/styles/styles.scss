@@ -1,0 +1,60 @@
+.searchBanner {
+    height: 230px;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    padding-top: 14px;
+    .custonBtnGroup {
+        .customBtn {
+            margin: 0 25px;
+        }
+    }
+}
+.main_search_component_box {
+    .main_content_box {
+        padding-top: 0;
+        .inner_content_box {
+            padding-top: 100px;
+        }
+    }
+}
+.AsideBox {
+    border-right: 1px solid #ddd;
+    padding-right: 15px;
+    .filter_aside_box {
+        .filter_checkbox_group {
+            list-style: none;
+            margin-left: 0;
+            padding-left: 0;
+            .form-check {
+                font-size: 14px;
+                line-height: 21px;
+                color: #000000;
+            }
+        }
+        .customDatePicker {
+            margin-bottom: 15px;
+            border-radius: 0;
+            &.form-control {
+                &::placeholder {
+                    font-size: 12px!important;
+                }
+            }
+        }
+    } 
+    .filter_title {
+        padding: 15px 0 10px 0;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .divider {
+        padding-top: 10px;
+        border-bottom: 1px solid #ddd;
+        width: 105.5%;
+    }
+}
+

@@ -3,7 +3,6 @@ import { Button, Col, Container, Row } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import { Procruments } from '../../FakeData/Procruments';
 import bannerImg from '../../images/banner.png';
-import CustomBtn from '../CustomBtn';
 import AwardedTable from './AwardedTable';
 import Ads1 from '../../images/ads2.png';
 import './styles/SinglePage.scss';

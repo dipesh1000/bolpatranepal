@@ -1,11 +1,16 @@
 import React from 'react';
-import SearchSection from '../SearchSection/SearchSection';
+import './styles/styles.scss';
+import SearchPageBanner from './SearchPageBanner';
+import SearchingContent from './SearchingContent';
 
 const SearchPageComponents = () => {
   return (
-    <div>
-      <SearchSection />
-    </div>
+    <>
+      <div className="main_search_component_box">
+        <SearchPageBanner />
+        <SearchingContent />
+      </div>
+    </>
   );
 };
 
