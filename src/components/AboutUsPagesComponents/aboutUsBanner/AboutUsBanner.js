@@ -1,11 +1,15 @@
 import React from 'react';
 import banner from '../../../images/aboutUsImage/header.jpg';
-import './style/AboutUsBanner.scss';
+
 
 const AboutUsBanner = () => {
     return (
-        <div className="banner">
-            <img src={banner} alt="" />
+        <div className="aboutUs_banner">
+            <img src={banner} alt="banner" />
+            <div className="banner_text">
+                <p>About Us</p>
+                <h1>We Are Bolpatra Nepal</h1>
+            </div>
         </div>
     )
 }
