@@ -1,0 +1,42 @@
+$primary: #B41D26;
+/* make the customizations */
+$theme-colors: (
+    "primary": #B41D26,
+    "success": #00B332,
+    "info": #0B66BB
+);
+
+/* import bootstrap to set changes */
+@import "~bootstrap/scss/bootstrap";
+
+.searchArea {
+    width: 775px;
+    margin: 28px auto;
+    @media (min-width: 576px) {
+        .col-sm-10 {
+            padding-right: 0;
+            .form-control  {
+                height: calc(2.2em + 1rem + 2px);
+                padding: 1em;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+                &::placeholder {
+                   font-size: 15px;
+                  }
+            }
+        }
+        .col-sm-2 {
+            padding-left: 0;
+            button {
+                border: 1px solid $primary;
+                width: 100%;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+                height: 100%;
+                svg {
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+}

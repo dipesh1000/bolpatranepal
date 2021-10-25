@@ -1,0 +1,18 @@
+/* make the customizations */
+$danger: green;
+
+h2 {
+    color: $danger;
+}
+body {
+    font-family: 'Poppins', sans-serif!important;
+}
+
+@media (min-width: 1200px){
+    .container{ 
+        max-width: 1325px!important;  
+    }
+}
+
+
+@import "../node_modules/bootstrap/scss/bootstrap";
