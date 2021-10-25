@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import DatePicker from './DatePicker';
 import FilterCheckBox from './FilterCheckBox';
 
@@ -7,7 +7,9 @@ const FilterAside = () => {
   return (
     <div className="AsideBox">
       <div className="filter_aside_box">
-        <div className="filter_title">Filter</div>
+        <div className="filter_title">
+          <p>Filter</p>
+        </div>
         <div className="divider"></div>
         <div className="filter_input_area">
           <DatePicker />
@@ -18,6 +20,7 @@ const FilterAside = () => {
         <FilterCheckBox title="Projects" />
         <div className="divider"></div>
         <FilterCheckBox title="Tendor Price" />
+        <Button className="apply_filter">Apply Filter</Button>
         <div className="divider"></div>
       </div>
     </div>

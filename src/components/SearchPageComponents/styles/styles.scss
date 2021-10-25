@@ -33,6 +33,7 @@
                 font-size: 14px;
                 line-height: 21px;
                 color: #000000;
+                padding-bottom: 10px;
             }
         }
         .customDatePicker {
@@ -44,12 +45,34 @@
                 }
             }
         }
+        .apply_filter {
+            font-family: "roboto";
+            background: #00B332;
+            border: 0.75px solid #00B332;
+            box-sizing: border-box;
+            border-radius: 50px;
+            color: #fff;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 23px;
+            display: block;
+            width: 100%;
+            margin-bottom: 15px;
+            &:hover {
+                background: #029e2e;
+                border: 0.75px solid #029e2e;
+            }
+        }
     } 
     .filter_title {
         padding: 15px 0 10px 0;
         font-weight: 600;
         font-size: 16px;
         line-height: 24px;
+        p {
+            padding-top: 15px;
+            margin-bottom: 0;
+        }
     }
     .divider {
         padding-top: 10px;
