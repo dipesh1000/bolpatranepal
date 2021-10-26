@@ -1,7 +1,10 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import { Button, Container } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
+import { openModal } from '../../redux/Modal/Modal.action';
 
 const TopNavBars = () => {
+  const dispatch = useDispatch();
   return (
     <>
       <div className="Top_Nav_bars">
@@ -27,6 +30,9 @@ const TopNavBars = () => {
             </li>
             <li>
               <a href="">Login</a>
+              <Button onClick={() => dispatch(openModal('login'))}>
+                Login
+              </Button>
             </li>
             <li>
               <a href="">Sign up</a>

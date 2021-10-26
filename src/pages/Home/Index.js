@@ -1,8 +1,8 @@
 import React from 'react';
 import { Switch } from 'react-router-dom';
-import RouteWithSubRoutes from '../../navigation/RouteWithSubRoutes';
-import routes from '../../navigation/routes';
-import PageNotFoundRoute from '../../navigation/PageNotFoundRoute';
+import RouteWithSubRoutes from '../../routes/RouteWithSubRoutes';
+import routes from '../../routes/routes';
+import PageNotFoundRoute from '../../routes/PageNotFoundRoute';
 const HomeIndex = () => {
   console.log(routes, 'From Index Routing');
   return (
