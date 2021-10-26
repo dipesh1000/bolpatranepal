@@ -1,6 +1,6 @@
 import React from 'react';
-import SinglePageSection from '../components/SinglePageSection/SinglePageSection';
-import HomeLayouts from '../layouts/HomeLayouts';
+import SinglePageSection from '../../components/SinglePageSection/SinglePageSection';
+import HomeLayouts from '../../layouts/HomeLayouts';
 
 const SinglePage = () => {
   return (
