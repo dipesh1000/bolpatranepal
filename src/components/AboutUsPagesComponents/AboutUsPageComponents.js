@@ -5,6 +5,7 @@ import OurStory from './ourStory/OurStory.js';
 import SiteDataChart from './SiteDataChart.js';
 import './style/style.scss'
 import Features from './Features';
+import ValuedUsers from './ValuedUsers';
 
 const AboutUsPageComponents = () => {
     return (
@@ -15,6 +16,7 @@ const AboutUsPageComponents = () => {
             <SiteDataChart />
             <SectionTitles title="WHY CHOOSE US" />
             <Features />
+            <ValuedUsers />
             <SectionTitles title="OUR TEAM" />
         </>
     )
