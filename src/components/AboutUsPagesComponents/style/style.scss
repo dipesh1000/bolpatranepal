@@ -195,15 +195,25 @@
 //features
 .holder{
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0;
+  justify-content: space-around;
 }
 
 //featureContent
 
-.featureContent_container{
-  width: 270px;
+.feature_content{
+  // width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 33.33%;
+  // background-color: black;
   margin-top: 50px;
-  
+
+
+.featureContent_container{
+  width: 260px;
   
   .icon{
     width: 50px;
@@ -235,6 +245,7 @@
     margin-top: 30px;
     font-size: 12px;
   }
+}
 }
 
 @media (max-width:768px) {
