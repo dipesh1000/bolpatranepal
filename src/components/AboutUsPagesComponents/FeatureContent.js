@@ -1,13 +1,13 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
 
-const FeatureContent = () => {
+const FeatureContent = ({ logo, title, content }) => {
     return (
-        <Container>
-            <div className="FeatureContent_container">
-
-            </div>
-        </Container>
+        <div className="feature_content">
+            <div className="icon">{logo}</div>
+            <h4 className="title">{title}</h4>
+            <div className="content">{content}</div>
+        </div>
     )
 }
 
