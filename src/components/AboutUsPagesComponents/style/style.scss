@@ -442,6 +442,7 @@
   .slick-active .ft-slick__dots--custom {
     position: absolute;
     width: 26px ;
+    transform: translateX(-9px);
     top: 0px ;
     overflow: hidden ;
     background-color: #B41D26;

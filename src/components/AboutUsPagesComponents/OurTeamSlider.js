@@ -124,7 +124,7 @@ const OurTeamSlider = () => {
                 `}
             </style>
             <Slider {...settings}>
-                {data.map(data => (
+                {data?.map(data => (
                     <div>
                         <div className="slider_holder">
                             <div className='image_holder'>
