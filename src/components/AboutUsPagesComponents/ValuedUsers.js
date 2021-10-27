@@ -1,6 +1,8 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import Ad1 from '../../images/aboutUsImage/ad1.png';
+import Ad2 from '../../images/aboutUsImage/ad2.png';
+import Ad3 from '../../images/aboutUsImage/ad3.png';
 
 const ValuedUsers = () => {
     return (
@@ -14,13 +16,13 @@ const ValuedUsers = () => {
                     </div>
                     <div className="valuedUserImages">
                         <div className="imageBox"><img src={Ad1} alt="user_image" /></div>
+                        <div className="imageBox"><img src={Ad2} alt="user_image" /></div>
+                        <div className="imageBox"><img src={Ad3} alt="user_image" /></div>
+                        <div className="imageBox"><img src={Ad2} alt="user_image" /></div>
+                        <div className="imageBox"><img src={Ad3} alt="user_image" /></div>
                         <div className="imageBox"><img src={Ad1} alt="user_image" /></div>
-                        <div className="imageBox"><img src={Ad1} alt="user_image" /></div>
-                        <div className="imageBox"><img src={Ad1} alt="user_image" /></div>
-                        <div className="imageBox"><img src={Ad1} alt="user_image" /></div>
-                        <div className="imageBox"><img src={Ad1} alt="user_image" /></div>
-                        <div className="imageBox"><img src={Ad1} alt="user_image" /></div>
-                        <div className="imageBox"><img src={Ad1} alt="user_image" /></div>
+                        <div className="imageBox"><img src={Ad2} alt="user_image" /></div>
+                        <div className="imageBox"><img src={Ad3} alt="user_image" /></div>
                     </div>
                 </div>
             </Container >
