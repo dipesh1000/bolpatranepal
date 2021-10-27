@@ -197,23 +197,23 @@
   display: flex;
   flex-wrap: wrap;
   padding: 0;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 //featureContent
 
 .feature_content{
   // width: 100%;
+  flex: 1;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  // justify-content: center;
   flex: 0 0 33.33%;
   // background-color: black;
   margin: 50px 0;
 
 
-.featureContent_container{
-  width: 260px;
+
   
   .icon{
     width: 50px;
@@ -246,7 +246,7 @@
     font-size: 12px;
   }
 }
-}
+
 
 @media (max-width:768px) {
   .holder{
