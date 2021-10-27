@@ -1,10 +1,13 @@
 import React from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
 import LoginImg from '../../images/login.png';
 import logo from '../../images/logo.png';
+import { openModal } from '../../redux/Modal/Modal.action';
 import './styles/style.scss';
 
 const LoginComponent = () => {
+  const dispatch = useDispatch();
   return (
     <div className="login_box">
       <Container>
@@ -40,8 +43,12 @@ const LoginComponent = () => {
                 </span>
               </div>
               <Form>
-                <Form.Group controlId="formBasicEmail">
-                  <Form.Control type="email" placeholder="Enter email" />
+                <Form.Group>
+                  <Form.Control
+                    type="text"
+                    placeholder="Enter email"
+                    autocomplete="off"
+                  />
                 </Form.Group>
 
                 <Form.Group controlId="formBasicPassword">
@@ -56,7 +63,12 @@ const LoginComponent = () => {
                   </Button>
                 </div>
               </Form>
-              <div className="not_member">Not a member yet ? Sign Up</div>
+              <div className="not_member">
+                Not a member yet ?{' '}
+                <Button onClick={() => dispatch(openModal('register'))}>
+                  Signup
+                </Button>
+              </div>
             </div>
           </Col>
         </Row>
