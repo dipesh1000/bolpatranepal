@@ -1,5 +1,5 @@
 import React from 'react';
-import AboutUsBanner from './aboutUsBanner/AboutUsBanner';
+import Banner from './aboutUsBanner/Banner.js';
 import SectionTitles from './SectionTitles';
 import OurStory from './ourStory/OurStory.js';
 import SiteDataChart from './SiteDataChart.js';
@@ -12,7 +12,7 @@ import OurTeamSlider from './OurTeamSlider';
 const AboutUsPageComponents = () => {
     return (
         <>
-            <AboutUsBanner />
+            <Banner pages="About Us" heading="We Are Bolpatra Nepal"/>
             <SectionTitles title="OUR STORY" />
             <OurStory />
             <SiteDataChart />
