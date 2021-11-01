@@ -1,13 +1,37 @@
+import { Field } from 'formik';
 import React from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import LoginImg from '../../images/login.png';
 import logo from '../../images/logo.png';
 import { openModal } from '../../redux/Modal/Modal.action';
+import { useForm } from '../common/Form/useForm';
+import * as yup from 'yup';
 import './styles/style.scss';
 
 const LoginComponent = () => {
   const dispatch = useDispatch();
+
+  let initialValues = {
+    email: '',
+    password: '',
+  };
+
+  const validationSchema = yup.object({
+    email: yup.string().email().required().label('Email'),
+    password: yup.string().required().label('Password'),
+  });
+
+  const onSubmit = (values, { setSubmitting }) => {
+    console.log(values, 'From values in login components');
+    setSubmitting(false);
+  };
+
+  const { CustomInput, CustomForm } = useForm({
+    initialValues: initialValues,
+    validationSchema,
+    onSubmit,
+  });
   return (
     <div className="login_box">
       <Container>
@@ -42,27 +66,27 @@ const LoginComponent = () => {
                   Bolpatra Nepal is a Platform for All Procurement Activities.
                 </span>
               </div>
-              <Form>
-                <Form.Group>
-                  <Form.Control
-                    type="text"
-                    placeholder="Enter email"
-                    autocomplete="off"
-                  />
-                </Form.Group>
+              <CustomForm>
+                <Field name="email" type="text" component={CustomInput} />
 
-                <Form.Group controlId="formBasicPassword">
+                <Field
+                  name="password"
+                  type="password"
+                  component={CustomInput}
+                />
+
+                {/* <Form.Group controlId="formBasicPassword">
                   <Form.Control type="password" placeholder="Password" />
                   <Form.Text className="text-muted text-right">
                     Forgot Password ?
                   </Form.Text>
-                </Form.Group>
+                </Form.Group> */}
                 <div className="btn_container">
                   <Button variant="primary" type="submit" size="lg" block>
                     Submit
                   </Button>
                 </div>
-              </Form>
+              </CustomForm>
               <div className="not_member">
                 Not a member yet ?{' '}
                 <Button onClick={() => dispatch(openModal('register'))}>
