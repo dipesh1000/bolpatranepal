@@ -1,7 +1,7 @@
 import React from 'react';
 import NavBars from './NavBars';
 import TopNavBars from './TopNavBars';
-// import './styles/header.scss';
+import './styles/header.scss';
 
 const Header = () => {
   return (
