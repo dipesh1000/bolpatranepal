@@ -1,6 +1,6 @@
 // about banner
 
-  .aboutUs_banner {
+  .banner {
     width: 100%;
     height: 355px;
     position: relative;
@@ -30,6 +30,15 @@
         height: 100%;
         background-color: rgba(0,0,0,0.7);
       }
+
+      .banner_btn{
+        border: none;
+        width: 205px;
+        padding: 10px;
+        color: #fff;
+        background: rgba(164, 164, 164, 0.5);
+        border-radius: 2px;
+      }
     }
   }
 
@@ -54,6 +63,8 @@
       height: 0px;
       border-bottom: 3px solid #B41D26;
     }
+
+    
   }
 
 
@@ -261,21 +272,34 @@
   align-items: center;
 .valuedUser_container{
   display: flex;
+  align-items: center;
   justify-content: space-between;
 
 
   .content_section{
     width: 30%;
+
+    h3{
+      font-size: 25px;
+      font-weight: 600;
+    }
+
+    p{
+      font-size: 12px;
+      line-height: 19px;
+      font-weight: 400;
+    }
   }
 
   .valuedUserImages{
     width: 60%;
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
 
     .imageBox{
       margin: 10px;
-      width: 120px;
+      width: 100px;
       height: 65px;
       flex: 0 0 20%;
 
@@ -288,3 +312,147 @@
   }
 }
 }
+
+@media (max-width:768px) {
+  .valuedUser_wrapper{
+    align-items: none;
+    padding: 50px 30px;
+  
+  .valuedUser_container{
+   flex-direction: column;
+   width: 100%;
+
+   .content_section{
+     width: 100%;
+   }
+
+   .valuedUserImages{
+     width: 100%;
+
+     .imageBox{
+       flex: 0 0 100%;
+       width: 200px;
+       height: 200px;
+     }
+   }
+  }  
+}
+}
+
+
+//stayinTouch
+
+.stayinTouch_container{
+  margin-top: 100px;
+  margin-bottom: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 50px 0;
+  background: rgba(11, 102, 187, 0.8);
+  border-radius: 20px;
+
+  .message{
+    color: white;
+    h3{
+      font-weight: 600;
+      font-size: 35px;
+    }
+    p{
+      margin-top: 10px;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      width: 90%;
+    }
+  }
+  div .btn-design{
+    width: 210px;
+    padding: 15px 0;
+    border: none;
+    border-radius: 50px;
+    background: #B41D26;
+    color: white;
+    font-size: 20px;
+
+    &:hover{
+      color: #fff;
+      background-color: #93181f;
+      border-color: #88161d;
+    }
+  }
+}
+
+@media (max-width:768px) {
+  .stayinTouch_container{
+    flex-direction: column;
+    .message{
+      padding: 20px;
+
+      p{
+        width: 100%;
+      }
+    }
+  }
+}
+
+    // /* the slides */
+    // .slick-slide {
+    //   margin: 0 10px;
+    // }
+    // /* the parent */
+    // .slick-list {
+    //   margin: 0 -10px;
+    // }
+
+//ourTeamSlider
+
+.slider_holder{
+  border-radius: 10px;
+  overflow: hidden;
+  height: 363px;
+  border: 1px solid rgba(210, 210, 210, 0.5);
+
+
+  .image_holder{
+    width: 100%;
+    height: 265px;
+
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+   
+  }
+  .text_container{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+// slider custom dot
+.ft-slick__dots--custom{
+    margin-top: 20px;
+    height: 8px;
+    width: 8px;
+    background-color: #e5e7e9;
+    border-radius: 4px;
+    position: relative;
+    transition: width 0.3s ease-in-out;
+  }
+
+  .slick-active .ft-slick__dots--custom {
+    position: absolute;
+    width: 26px ;
+    transform: translateX(-9px);
+    top: 0px ;
+    overflow: hidden ;
+    background-color: #B41D26;
+  }

@@ -2,6 +2,9 @@ import Homepage from '../pages/Home/Homepage';
 import SinglePage from '../pages/Home/SinglePage';
 import SearchPage from '../pages/Home/SearchPage';
 import AboutUsPage from '../pages/Home/AboutUsPage';
+import OurServicePage from '../pages/Home/OurServicePage';
+import PricingPage from '../pages/Home/PricingPage';
+
 
 const routes = {
   home: [
@@ -23,6 +26,16 @@ const routes = {
     {
       path: '/aboutus',
       component: AboutUsPage,
+      exact: true,
+    },
+    {
+      path: '/ourservices',
+      component: OurServicePage,
+      exact: true,
+    },
+    {
+      path: '/pricing',
+      component: PricingPage,
       exact: true,
     },
   ],

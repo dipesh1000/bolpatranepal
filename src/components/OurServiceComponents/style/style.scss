@@ -1,0 +1,108 @@
+
+// //serviceDescription
+
+@mixin wrapper_design{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin content_header_design {
+    text-align: justify;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 30px;
+    position: relative;
+}
+
+@mixin image_design {
+    width: 100%;
+    height: 100%;
+}
+
+@mixin before_design {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 0;
+    border-bottom: 2px solid #B41D26;
+    bottom: -20px;
+}
+
+.odd_background{
+    background-color: #fff;
+    .wrapper{
+        @include wrapper_design();
+        padding: 50px 0;
+
+        .content_image{
+            width: 90%;
+            height: 100%;
+            img{
+                @include image_design();
+            }
+        } 
+    }    
+    .content_header{
+        @include content_header_design();
+
+        &::before{
+            @include before_design();
+        }
+    }        
+    .content_description{
+        margin-top: 40px;
+        text-align: justify;
+    }
+}
+
+.even_background{
+    background: rgba(11, 102, 187, 0.2);
+
+    .wrapper{
+        @include wrapper_design();
+        padding: 50px 0;
+
+        .style_modifier{
+            display: flex;
+            flex-direction: row-reverse;
+            .content_image{
+                width: 100%;
+                height: 100%;
+
+                img{
+                    @include image_design();
+                }
+            }
+            .content{
+                width: 90%;
+
+                .content_header{
+                    @include content_header_design();
+
+                    &::before{
+                        @include before_design();
+                    }
+                }
+
+                .content_description{
+                    margin-top: 40px;
+                    text-align: justify;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:768px) {
+    .even_background .wrapper,.odd_background .wrapper,.odd_background  .content_header, .even_background  .content_header{
+        padding: 20px 0;
+    }
+
+    .odd_background .wrapper .content_image,.even_background .wrapper .style_modifier .content{
+        width: 100%;
+    }
+}
+
