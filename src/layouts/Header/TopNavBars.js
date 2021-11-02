@@ -29,8 +29,10 @@ const TopNavBars = () => {
               <a href="">Contact Us +977 9808776376</a>
             </li>
             <li>
-              <a href="">Login</a>
-              <Button onClick={() => dispatch(openModal('login'))}>
+              <Button
+                className="custom_bav_btn"
+                onClick={() => dispatch(openModal('login'))}
+              >
                 Login
               </Button>
             </li>

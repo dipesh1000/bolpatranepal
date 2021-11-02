@@ -32,6 +32,7 @@ const LoginComponent = () => {
     validationSchema,
     onSubmit,
   });
+  console.log(initialValues, '>>>>>>>>>>>');
   return (
     <div className="login_box">
       <Container>
@@ -74,13 +75,6 @@ const LoginComponent = () => {
                   type="password"
                   component={CustomInput}
                 />
-
-                {/* <Form.Group controlId="formBasicPassword">
-                  <Form.Control type="password" placeholder="Password" />
-                  <Form.Text className="text-muted text-right">
-                    Forgot Password ?
-                  </Form.Text>
-                </Form.Group> */}
                 <div className="btn_container">
                   <Button variant="primary" type="submit" size="lg" block>
                     Submit
