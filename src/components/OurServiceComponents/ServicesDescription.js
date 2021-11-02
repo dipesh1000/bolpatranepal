@@ -1,5 +1,6 @@
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './style/style.scss';
 
 const ServicesDescription = ({serviceImage, contentHeader, contentDescription}) => {
@@ -21,7 +22,7 @@ const ServicesDescription = ({serviceImage, contentHeader, contentDescription}) 
                             <p className="content_description">
                                 {contentDescription}
                             </p>
-                            <a href="#" className='learnmore_btn'>Learn more</a>
+                            <Link to={`/ourservices/${contentHeader}`} className='learnmore_btn'>Learn more</Link>
                         </div>
                     </Col>
                 </Row>

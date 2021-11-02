@@ -10,7 +10,7 @@ const CustomCard = ({planName,planPrice,features,bestPrice}) => {
             <p className="plan_name">{planName}</p>
             <p className="plan_price">{planPrice}</p>
             <p className="plan_type">Npr / User / 1 year</p>
-            <span className="border"></span>
+            <div className="border"></div>
             <ul>
                 {features.map((feature, index) =>(
                     <>
