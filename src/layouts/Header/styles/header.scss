@@ -17,6 +17,19 @@ $Navbgcolor: #000000;
                 font-family: 'Poppins', sans-serif;
                 color: $content;
             }
+            .custom_bav_btn {
+                font-size: 14px;
+                color: $content;
+                padding: 0;
+                background-color: none;
+                border: 0;
+                background-color: transparent;
+                &:focus {
+                    background-color: transparent;
+                    outline: none;
+                    box-shadow: none;
+                }
+            }
         }
     }
 }
