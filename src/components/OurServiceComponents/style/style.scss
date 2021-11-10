@@ -56,6 +56,13 @@
         margin-top: 40px;
         text-align: justify;
     }
+    .learnmore_btn{
+        text-decoration: none;
+        
+        &:hover{
+            color: #93181f;
+        }
+    }
 }
 
 .even_background{
@@ -90,6 +97,14 @@
                 .content_description{
                     margin-top: 40px;
                     text-align: justify;
+                }
+
+                .learnmore_btn{
+                    text-decoration: none;
+                    
+                    &:hover{
+                        color: #93181f;
+                    }
                 }
             }
         }
