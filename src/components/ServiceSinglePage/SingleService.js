@@ -14,19 +14,18 @@ const ServiceComponents = () => {
     // const location = useLocation();
     const {slug} = useParams();
     const serviceDetail =  serviceData?.find((i) => i.slug === slug)
-    console.log(serviceData,"..")
 
     return (
         <>
             <Banner pages="Our Service" heading={serviceDetail.serviceHeader}/>
             <Container>
             <div className="info_container">
+            <div className="link_section">
+                    <LinkBox />
+                </div>
                 <div className="info_content">
                     <SectionTitles start title={serviceDetail.serviceHeader} />
                     <p className="description">{serviceDetail.servicesDescription}</p>
-                </div>
-                <div className="link_section">
-                    <LinkBox />
                 </div>
             </div>
             <div className="procurement_container">
