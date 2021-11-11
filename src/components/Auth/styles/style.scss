@@ -1,5 +1,4 @@
 .login_box {
-    height: 555px;
     .login_aside_img {
         background-size: cover;
         height: 100%;
@@ -79,6 +78,14 @@
                 line-height: 19px;
                 color: rgba(0, 0, 0, 0.7);
             }
+        }
+    }
+    .button_container {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        button {
+            width: 40%;
         }
     }
 }

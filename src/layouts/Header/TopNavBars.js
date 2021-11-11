@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Container } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { openModal } from '../../redux/Modal/Modal.action';
 
 const TopNavBars = () => {
@@ -11,10 +12,10 @@ const TopNavBars = () => {
         <Container>
           <ul>
             <li>
-              <a href="">About Us</a>
+              <Link to="/aboutus">About Us</Link>
             </li>
             <li>
-              <a href="">Services</a>
+              <Link to="/ourservices">Services</Link>
             </li>
             <li>
               <a href="">Contact Us</a>
@@ -23,7 +24,7 @@ const TopNavBars = () => {
               <a href="">Covid 19 Tender</a>
             </li>
             <li>
-              <a href="">Pricing</a>
+              <Link to="/pricing">Pricing</Link>
             </li>
             <li>
               <a href="">Contact Us +977 9808776376</a>
