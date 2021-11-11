@@ -1,0 +1,41 @@
+ //SiteDatachart
+ .chartbox_container{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+  
+    .chart_box{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(
+        0deg, rgba(11, 102, 187, 0.1) 0%,
+      rgba(11, 102, 187, 0.0528158) 48.27%,
+      rgba(11, 102, 187, 0.01) 100%
+       );
+      border-radius: 10px;
+  
+  
+      .box{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+  
+        &:nth-child(odd){
+          border-right:1px solid #B41D26;
+        }
+  
+        &:nth-child(even){
+          border-right: 1px solid  #B41D26;
+        }
+  
+        &:last-child{
+          border: none;
+        }
+      }
+    }
+  }

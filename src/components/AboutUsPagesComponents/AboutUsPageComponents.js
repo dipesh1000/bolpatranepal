@@ -1,12 +1,12 @@
 import React from 'react';
-import Banner from './aboutUsBanner/Banner.js';
-import SectionTitles from './SectionTitles';
+import Banner from '../common/Banner/Banner.js';
+import SectionTitles from '../sectionTitle/SectionTitles.js';
 import OurStory from './ourStory/OurStory.js';
-import SiteDataChart from './SiteDataChart.js';
+import SiteDataChart from '../DataChart/SiteDataChart.js';
 import './style/style.scss'
 import Features from './Features';
 import ValuedUsers from './ValuedUsers';
-import StayinTouch from './StayinTouch';
+import StayinTouch from '../StayInTouch/StayinTouch';
 import OurTeamSlider from './OurTeamSlider';
 
 const AboutUsPageComponents = () => {

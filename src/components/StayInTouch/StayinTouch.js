@@ -1,5 +1,6 @@
 import React from 'react'
-import { Container } from 'react-bootstrap'
+import { Container } from 'react-bootstrap';
+import './style.scss';
 
 const StayinTouch = () => {
     return (

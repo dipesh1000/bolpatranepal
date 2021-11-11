@@ -1,5 +1,6 @@
 import React from 'react';
 import banner from '../../../images/aboutUsImage/header.jpg';
+import './style.scss';
 
 const Banner = ({pages,heading,message,buttonText}) => {
     return (
