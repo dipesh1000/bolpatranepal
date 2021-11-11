@@ -35,7 +35,7 @@ const routes = {
       exact: true,
     },
     {
-      path: '/ourservices/:string',
+      path: '/ourservices/:slug',
       component: OurServiceSinglePage,
       exact: true,
     },

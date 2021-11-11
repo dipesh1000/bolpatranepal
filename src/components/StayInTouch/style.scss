@@ -1,0 +1,58 @@
+//stayinTouch
+
+.stayinTouch_container{
+    margin-top: 100px;
+    margin-bottom: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: url(../../images/stayInTouch.png);
+    background-size: cover;
+    padding: 50px 0;
+    border-radius: 20px;
+  
+    .message{
+      color: white;
+      h3{
+        font-weight: 600;
+        font-size: 35px;
+      }
+      p{
+        margin-top: 10px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        width: 90%;
+      }
+    }
+    div .btn-design{
+      width: 210px;
+      padding: 15px 0;
+      border: none;
+      border-radius: 50px;
+      background: #B41D26;
+      color: white;
+      font-size: 20px;
+  
+      &:hover{
+        color: #fff;
+        background-color: #93181f;
+        border-color: #88161d;
+      }
+    }
+  }
+  
+  @media (max-width:768px) {
+    .stayinTouch_container{
+      flex-direction: column;
+      .message{
+        padding: 20px;
+  
+        p{
+          width: 100%;
+        }
+      }
+    }
+  }
+  

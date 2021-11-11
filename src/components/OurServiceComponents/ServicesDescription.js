@@ -3,7 +3,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './style/style.scss';
 
-const ServicesDescription = ({serviceImage, contentHeader, contentDescription}) => {
+const ServicesDescription = ({serviceImage, contentHeader, contentDescription,slug}) => {
     return (
         <div className="wrapper">
             <Container >
@@ -22,7 +22,7 @@ const ServicesDescription = ({serviceImage, contentHeader, contentDescription}) 
                             <p className="content_description">
                                 {contentDescription}
                             </p>
-                            <Link to={`/ourservices/${contentHeader}`} className='learnmore_btn'>Learn more</Link>
+                            <Link to={{pathname: `/ourservices/${slug}`}} className='learnmore_btn'>Learn more</Link>
                         </div>
                     </Col>
                 </Row>

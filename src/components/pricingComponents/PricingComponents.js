@@ -1,7 +1,6 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import '../AboutUsPagesComponents/aboutUsBanner/Banner.js';
-import Banner from '../AboutUsPagesComponents/aboutUsBanner/Banner.js';
+import Banner from '../common/Banner/Banner.js';
 import CustomCard from './CustomCard.js';
 import './style/style.scss';
 
