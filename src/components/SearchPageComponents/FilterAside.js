@@ -9,6 +9,7 @@ const FilterAside = () => {
   let initialValues = {
     date_from: '',
     date_to: '',
+    procrument: [],
   };
 
   const validationSchema = yup.object({
@@ -39,11 +40,14 @@ const FilterAside = () => {
             <DatePicker CustomDateInput={CustomDateInput} />
           </div>
           <div className="divider"></div>
-          <FilterCheckBox title="Procruments" />
+          <FilterCheckBox CustomCheckbox={CustomCheckbox} title="Procruments" />
+          {/* <div className="divider"></div>
+          <FilterCheckBox CustomCheckbox={CustomCheckbox} title="Projects" />
           <div className="divider"></div>
-          <FilterCheckBox title="Projects" />
-          <div className="divider"></div>
-          <FilterCheckBox title="Tendor Price" />
+          <FilterCheckBox
+            CustomCheckbox={CustomCheckbox}
+            title="Tendor Price"
+          /> */}
           <Button type="submit" className="apply_filter">
             Apply Filter
           </Button>
