@@ -67,22 +67,27 @@ const StepOne = (props) => {
     >
       {() => (
         <Form>
-          <Field
-            name="email"
-            type="text"
-            placeholder="Email"
-            className="form-control"
-          />
-
-          <ErrorMessage name="email" />
-          <Field
-            name="password"
-            placeholder="Password"
-            className="form-control"
-          />
-          <ErrorMessage name="password" />
+          <div className="mb-3">
+            <Field
+              name="email"
+              type="text"
+              placeholder="Email"
+              className="form-control"
+            />
+            <ErrorMessage name="email" />
+          </div>
+          <div className="mb-3">
+            <Field
+              name="password"
+              type="password"
+              placeholder="Password"
+              className="form-control"
+            />
+            <ErrorMessage name="password" />
+          </div>
           <Field
             name="confrim_password"
+            type="password"
             placeholder="Confirm Password"
             className="form-control"
           />
@@ -120,23 +125,50 @@ const StepTwo = (props) => {
     >
       {({ values }) => (
         <Form>
-          <Field name="full_name" className="form-control" />
-          <ErrorMessage name="full_name" />
-          <Field name="phone" className="form-control" />
-          <ErrorMessage name="phone" />
-          <Field name="city" className="form-control" />
-          <ErrorMessage name="city" />
-          <Field name="district" className="form-control" />
-          <ErrorMessage name="district" />
-          <Field name="state" className="form-control" />
-          <ErrorMessage name="state" />
-          <Field name="country" className="form-control" />
-          <ErrorMessage name="country" />
-
-          <button type="button" onClick={() => props.prev(values)}>
-            Back
-          </button>
-          <button type="submit">Submit</button>
+          <div className="mb-3">
+            <Field
+              name="full_name"
+              placeholder="full name"
+              className="form-control"
+            />
+            <ErrorMessage name="full_name" />
+          </div>
+          <div className="mb-3">
+            <Field name="phone" placeholder="phone" className="form-control" />
+            <ErrorMessage name="phone" />
+          </div>
+          <div className="mb-3">
+            <Field name="city" placeholder="city" className="form-control" />
+            <ErrorMessage name="city" />
+          </div>
+          <div className="mb-3">
+            <Field
+              name="district"
+              placeholder="district"
+              className="form-control"
+            />
+            <ErrorMessage name="district" />
+          </div>
+          <div className="mb-3">
+            <Field name="state" placeholder="state" className="form-control" />
+            <ErrorMessage name="state" />
+          </div>
+          <div className="mb-3">
+            <Field
+              name="country"
+              placeholder="country"
+              className="form-control"
+            />
+            <ErrorMessage name="country" />
+          </div>
+          <div class="button_container">
+            <Button variant="primary" onClick={() => props.prev(values)}>
+              Back
+            </Button>
+            <Button type="submit" variant="success">
+              Submit
+            </Button>
+          </div>
         </Form>
       )}
     </Formik>

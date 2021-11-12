@@ -1,28 +1,66 @@
+import { Field } from 'formik';
 import React from 'react';
+
 import { Form } from 'react-bootstrap';
 
-const FilterCheckBox = ({ title }) => {
+const FilterCheckBox = ({ title, CustomCheckbox }) => {
   return (
     <>
       <ul className="filter_checkbox_group">
         <li className="filter_title">{title}</li>
         <li>
-          <Form.Check type="checkbox" label="All" />
+          <Field
+            component={CustomCheckbox}
+            name="procrument"
+            label="All"
+            type="checkbox"
+            value="all"
+          />
         </li>
         <li>
-          <Form.Check type="checkbox" label="Work" />
+          <Field
+            component={CustomCheckbox}
+            name="procrument"
+            label="Work"
+            type="checkbox"
+            value="work"
+          />
         </li>
         <li>
-          <Form.Check type="checkbox" label="Goods" />
+          <Field
+            component={CustomCheckbox}
+            name="procrument"
+            label="Goods"
+            type="checkbox"
+            value="goods"
+          />
         </li>
         <li>
-          <Form.Check type="checkbox" label="Auction/Tax/Revenue" />
+          <Field
+            component={CustomCheckbox}
+            name="procrument"
+            label="Auction/Tax/Revenue"
+            type="checkbox"
+            value="auction_tax_revenue"
+          />
         </li>
         <li>
-          <Form.Check type="checkbox" label="Consultancy" />
+          <Field
+            component={CustomCheckbox}
+            name="procrument"
+            label="Consultancy"
+            type="checkbox"
+            value="consultancy"
+          />
         </li>
         <li>
-          <Form.Check type="checkbox" label="Insurance" />
+          <Field
+            component={CustomCheckbox}
+            name="procrument"
+            label="Insurance"
+            type="checkbox"
+            value="insurance"
+          />
         </li>
       </ul>
     </>
