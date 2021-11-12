@@ -5,6 +5,7 @@ import AboutUsPage from '../pages/Home/AboutUsPage';
 import OurServicePage from '../pages/Home/OurServicePage';
 import PricingPage from '../pages/Home/PricingPage';
 import OurServiceSinglePage from '../pages/Home/OurServiceSinglePage';
+import ContactUsPage from '../pages/Home/ContactUsPage';
 
 
 const routes = {
@@ -42,6 +43,11 @@ const routes = {
     {
       path: '/pricing',
       component: PricingPage,
+      exact: true,
+    },
+    {
+      path: '/contactus',
+      component: ContactUsPage,
       exact: true,
     },
   ],
