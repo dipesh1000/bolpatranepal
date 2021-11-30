@@ -15,10 +15,28 @@ import * as yup from 'yup';
 
 
 const ContactUs = () => {
+  let initialValues = {
+    name: '',
+    email: '',
+    contact:'',
+    subject:'',
+  };
 
-  
-  
+  const validationSchema = yup.object({
+    email: yup.string().email().required().label('Email'),
+    password: yup.string().required().label('Password'),
+  });
 
+  const onSubmit = (values, { setSubmitting }) => {
+    console.log(values, 'From values in login components');
+    setSubmitting(false);
+  };
+
+  const { CustomInput, CustomForm } = useForm({
+    initialValues: initialValues,
+    validationSchema,
+    onSubmit,
+  });
     return (
         <div className="contact_box">
           <Row>
@@ -65,6 +83,7 @@ const ContactUs = () => {
                             <div className="company_info_description"> 
                             <h4>Contact</h4>
                             <div className="contact_wrapper">
+                              
                             {companyInfo.contact.map (data =>(
                             <p>{data}</p>
                             ))}
@@ -81,19 +100,16 @@ const ContactUs = () => {
               <div className="contact_aside_field_box">
                 <div className="contact_main_title">
                   <h4>Contact Us</h4>
-
-                  <Formik
-                  initialValues = {{
-                    name: '',
-                    email: '',
-                    phone: '',
-                    subject: '',
-                    message: ''
-                  }}>
-                  {formik => (
-                    console.log(formik)
-                  )}
-                  </Formik>
+                    <CustomForm>
+                      <div  className="form_wrapper">
+                        <Field name="name" placeHolder="Name" component={CustomInput} />
+                        <div className="email_contact">
+                          <Field name="email" placeHolder="Email" component={CustomInput} />
+                          <Field name="contact" placeHolder="Phone" component={CustomInput} />
+                        </div>
+                        <Field name="subject" placeHolder="Subject" component={CustomInput} />
+                      </div>
+                    </CustomForm>
                 </div>
               </div>
             </Col>
