@@ -42,3 +42,10 @@
       }
     }
   }
+
+  @media (max-width:768px) {
+    .banner .banner_text h1{
+       font-size: 32px;
+       text-align: center;
+    }
+  }
