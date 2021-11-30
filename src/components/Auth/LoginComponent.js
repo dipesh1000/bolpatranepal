@@ -8,6 +8,7 @@ import { openModal } from '../../redux/Modal/Modal.action';
 import { useForm } from '../common/Form/useForm';
 import * as yup from 'yup';
 import './styles/style.scss';
+import { login } from './redux/Auth.actions';
 
 const LoginComponent = () => {
   const dispatch = useDispatch();
@@ -24,6 +25,7 @@ const LoginComponent = () => {
 
   const onSubmit = (values, { setSubmitting }) => {
     console.log(values, 'From values in login components');
+    dispatch(login(values));
     setSubmitting(false);
   };
 

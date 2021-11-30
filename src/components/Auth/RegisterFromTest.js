@@ -9,10 +9,6 @@ const RegisterFromTest = () => {
     email: '',
     password: '',
     confrim_password: '',
-    city: '',
-    district: '',
-    state: '',
-    country: '',
   });
   const [currentStep, setCurrentStep] = useState(0);
 
@@ -134,14 +130,18 @@ const StepTwo = (props) => {
             <ErrorMessage name="full_name" />
           </div>
           <div className="mb-3">
-            <Field name="phone" placeholder="phone" className="form-control" />
-            <ErrorMessage name="phone" />
+            <Field
+              name="phone_no"
+              placeholder="phone"
+              className="form-control"
+            />
+            <ErrorMessage name="phone_no" />
           </div>
           <div className="mb-3">
             <Field name="city" placeholder="city" className="form-control" />
             <ErrorMessage name="city" />
           </div>
-          <div className="mb-3">
+          {/* <div className="mb-3">
             <Field
               name="district"
               placeholder="district"
@@ -160,7 +160,7 @@ const StepTwo = (props) => {
               className="form-control"
             />
             <ErrorMessage name="country" />
-          </div>
+          </div> */}
           <div class="button_container">
             <Button variant="primary" onClick={() => props.prev(values)}>
               Back

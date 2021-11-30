@@ -5,7 +5,7 @@ import AboutUsPage from '../pages/Home/AboutUsPage';
 import OurServicePage from '../pages/Home/OurServicePage';
 import PricingPage from '../pages/Home/PricingPage';
 import OurServiceSinglePage from '../pages/Home/OurServiceSinglePage';
-
+import Dashboard from '../pages/UserDashboard/Dashboard/Dashboard';
 
 const routes = {
   home: [
@@ -45,6 +45,16 @@ const routes = {
       exact: true,
     },
   ],
+  private: [
+    {
+      path: '/user/profile',
+      component: Dashboard,
+      exact: true,
+    },
+  ],
 };
 
-export default { ...routes, home: [...routes.home] };
+export default {
+  ...routes,
+  home: [...routes.home, ...routes.private],
+};

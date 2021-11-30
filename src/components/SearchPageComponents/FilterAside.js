@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useForm } from '../common/Form/useForm';
 import DatePicker from './DatePicker';
 import FilterCheckBox from './FilterCheckBox';
+import { procrumentParams } from '../../FakeData/SearchParameters';
 import * as yup from 'yup';
 
 const FilterAside = () => {
@@ -10,6 +11,8 @@ const FilterAside = () => {
     date_from: '',
     date_to: '',
     procrument: [],
+    project: [],
+    tendor: [],
   };
 
   const validationSchema = yup.object({
@@ -40,14 +43,23 @@ const FilterAside = () => {
             <DatePicker CustomDateInput={CustomDateInput} />
           </div>
           <div className="divider"></div>
-          <FilterCheckBox CustomCheckbox={CustomCheckbox} title="Procruments" />
-          {/* <div className="divider"></div>
-          <FilterCheckBox CustomCheckbox={CustomCheckbox} title="Projects" />
+          <FilterCheckBox
+            CustomCheckbox={CustomCheckbox}
+            title="Procruments"
+            name="procrument"
+          />
+          <div className="divider"></div>
+          <FilterCheckBox
+            CustomCheckbox={CustomCheckbox}
+            title="Projects"
+            name="projects"
+          />
           <div className="divider"></div>
           <FilterCheckBox
             CustomCheckbox={CustomCheckbox}
             title="Tendor Price"
-          /> */}
+            name="tendor_price"
+          />
           <Button type="submit" className="apply_filter">
             Apply Filter
           </Button>
