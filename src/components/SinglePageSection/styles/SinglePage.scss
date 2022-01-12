@@ -29,12 +29,13 @@
         .singlePageContent_cols {
             display: flex;
             .attachementContainer {
-                width: 80%;
+                width: 60%;
                 img {
                     width: 100%;
                 }
             }
             ul {
+                flex: 1;
                 list-style: none;
                 font-family: 'Poppins', sans-serif;
                 li {

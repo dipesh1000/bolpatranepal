@@ -3,6 +3,7 @@ import { Field, Form, Formik, useFormik } from 'formik';
 import Input from './CustomInput';
 import DateInput from './CustomDateInput';
 import CheckBox from './CustomCheckbox';
+import SelectInput from './CustomSelect';
 
 export const useForm = ({ initialValues, onSubmit, validationSchema }) => {
   const formik = useFormik({
@@ -18,6 +19,9 @@ export const useForm = ({ initialValues, onSubmit, validationSchema }) => {
   };
   const CustomCheckbox = (props) => {
     return <Field {...props} component={CheckBox} />;
+  };
+  const CustomSelect = (props) => {
+    return <Field {...props} component={SelectInput} />;
   };
   const CustomForm = ({ children, onKeyDown, ...others }) => {
     return (
@@ -43,5 +47,12 @@ export const useForm = ({ initialValues, onSubmit, validationSchema }) => {
       //  </form>
     );
   };
-  return { formik, CustomForm, CustomInput, CustomDateInput, CustomCheckbox };
+  return {
+    formik,
+    CustomForm,
+    CustomInput,
+    CustomDateInput,
+    CustomCheckbox,
+    CustomSelect,
+  };
 };

@@ -1,23 +1,23 @@
 import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
-import HomeLayouts from '../../layouts/HomeLayouts';
-import DashContainer from './DashContainer';
+import { Col, Row } from 'react-bootstrap';
+import BidBox from './LeftAsideBox/BidBox';
+import MainContainer from './MainContainer/MainContainer';
+import UserLinks from './RightAsideBox/UserLinks';
+import './styles/styles.scss';
 
 const Dashboard = () => {
   return (
-    <HomeLayouts>
-      <div className="dashboard_wrapper">
-        <Container>
-          <Row>
-            <Col md={3}></Col>
-            <Col>
-              <DashContainer />
-            </Col>
-            <Col md={3}></Col>
-          </Row>
-        </Container>
-      </div>
-    </HomeLayouts>
+    <Row>
+      <Col md={3}>
+        <BidBox />
+      </Col>
+      <Col>
+        <MainContainer />
+      </Col>
+      <Col md={3}>
+        <UserLinks />
+      </Col>
+    </Row>
   );
 };
 

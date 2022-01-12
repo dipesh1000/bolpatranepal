@@ -11,7 +11,6 @@ const HomeIndex = () => {
         {routes.home.map((route, index) => (
           <RouteWithSubRoutes key={index} {...route} />
         ))}
-        <PageNotFoundRoute />
       </Switch>
     </div>
   );

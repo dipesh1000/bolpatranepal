@@ -3,6 +3,7 @@ import { Button, Container, Modal } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { closeModal } from '../../redux/Modal/Modal.action';
 import LoginComponent from '../Auth/LoginComponent';
+import OtpComponent from '../Auth/OtpComponent';
 import RegisterComponent from '../Auth/RegisterComponent';
 
 const CustomModal = () => {
@@ -31,6 +32,15 @@ const CustomModal = () => {
           dialogClassName="modal_width"
         >
           <RegisterComponent />
+        </Modal>
+      ) : modal.modalName === 'otp' ? (
+        <Modal
+          show={modal.modalStatus}
+          onHide={handleClose}
+          size="md"
+          dialogClassName="modal_width"
+        >
+          <OtpComponent />
         </Modal>
       ) : null}
     </>

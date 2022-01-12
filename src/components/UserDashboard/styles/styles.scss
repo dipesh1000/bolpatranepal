@@ -1,0 +1,191 @@
+.dashboard_wrapper {
+    background: #EDEDED;
+    padding-top: 15px;
+}
+.user_info_box {
+    background: #fff;
+    width: 100%;
+    padding: 40px 40px;
+    margin-bottom: 20px;
+    .user_info {
+        text-align: center;
+        h3 {
+            font-size: 25px;
+            line-height: 68px;
+            font-weight: 600;
+            color: rgba(0, 0, 0, 0.8);
+        }
+        .user_image_container {
+            width: 120px;
+            border-radius: 50%;
+            height: 120px;
+            overflow: hidden;
+            margin: 0 auto;
+            display: block;
+            img {
+                width: 100%;
+            }
+        }
+    }
+    .user_info_meta {
+        padding: 0 20px;
+        ul {
+            list-style: none;
+            padding-left: 0;
+            display: flex;
+            justify-content: space-between;
+            li {
+                border-right: 1px solid red;
+                padding-right: 60px;
+                &:last-child {
+                    border-right: 0px solid red;
+                padding-right: 0;
+                }
+                span {
+                    display: block;
+                    text-align:center;
+                    font-weight: 500;
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
+}
+
+.user_profile_edit {
+    width: 380px;
+    margin: 0 auto;
+}
+
+.Bid_box {
+    ul {
+        list-style: none;
+        padding-left: 0;
+        li {
+            padding: 10px 15px;
+            background: #fff;
+            border: 0.75px solid #DEDEDE;
+            box-sizing: border-box;
+            &.Bid_box_title {
+                padding-top: 20px;
+                text-align: center;
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 27px;
+                color: rgba(0, 0, 0, 0.8);
+            }
+            &.Bid_box_see_more {
+                padding-top: 20px;
+                text-align: center;
+                font-weight: 600;
+                
+            }
+            a {
+                color: rgba(0, 0, 0, 0.8);
+                &:hover {
+                    text-decoration: none;
+                    color: rgba(0, 0, 0, 0.6);
+                }
+            }
+        }
+    }
+}
+
+.user_links {
+    ul {
+        list-style: none;
+        background: #fff;
+        padding: 10px 0;
+        li {
+            padding: 5px 15px;
+            a {
+                display: block;
+                font-family: "Roboto";
+                font-style: normal;
+                color: rgba(0, 0, 0, 0.5);
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 19px;
+                padding: 5px 0;
+                svg {
+                    margin-right: 15px;
+                }
+                &:hover {
+                    color: rgba(0, 0, 0, 0.8);
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+.user_about_box {
+    margin-bottom: 20px;
+    background: #fff;
+    .user_about_container {
+        padding: 40px;
+        margin-bottom: 30px;
+        .box_title_row {
+            position: relative;
+            .box_title {
+                text-align: center;
+                font-weight: 600;
+                    font-size: 18px;
+                    line-height: 27px;
+                    color: rgba(0, 0, 0, 0.8);
+                    margin-bottom: 15px;
+            }
+            button {
+                background: transparent;
+                border: none;
+                color:rgba(0, 0, 0, 0.8);
+                position: absolute;
+                right: 0;
+                top: 0;
+                &:focus {
+                    box-shadow: none;
+                    background: transparent;
+                    outline: none;
+                    border: none;
+                }
+                &:active {
+                    box-shadow: none;
+                    background: transparent;
+                    outline: none;
+                    border: none;
+                }
+                &:focus-visible {
+                    box-shadow: none;
+                    background: transparent;
+                    outline: none;
+                    border: none;
+                }
+            }
+        }
+        
+        .info_details {
+            width: 380px;
+            margin: 0 auto;
+            align-items: center;
+            .info_row {
+                display: flex;
+                margin-bottom: 18px;
+                .info_row_title {
+                    width: 180px;
+                    font-size: 15px;
+                    line-height: 25px;
+                    letter-spacing: 0.04em;
+                    color: rgba(0, 0, 0, 0.8);
+                }
+                .info_row_value {
+                    padding-left: 40px;
+                    font-weight: 600;
+                    font-size: 15px;
+                    line-height: 25px;
+                    letter-spacing: 0.04em;
+                    color: rgba(0, 0, 0, 0.8);
+                }
+            }
+        }
+    }
+}

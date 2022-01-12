@@ -2,18 +2,22 @@ import React, { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { Button } from 'react-bootstrap';
+import { register } from './redux/Auth.actions';
+import { useDispatch, useSelector } from 'react-redux';
 const RegisterFromTest = () => {
   const [data, setData] = useState({
-    full_name: '',
-    phone: '',
+    name: '',
+    phone_no: '',
     email: '',
     password: '',
-    confrim_password: '',
+    passwordconfirmation: '',
+    status: '',
   });
   const [currentStep, setCurrentStep] = useState(0);
-
+  const dispatch = useDispatch();
   const makeRequest = (formData) => {
     console.log('Form Submitted', formData);
+    dispatch(register(formData));
   };
 
   const handleNextStep = (newData, final = false) => {
@@ -45,7 +49,7 @@ const RegisterFromTest = () => {
 const stepOneValidationSchema = Yup.object({
   email: Yup.string().required().label('Email'),
   password: Yup.string().required().label('Password'),
-  confrim_password: Yup.string()
+  passwordconfirmation: Yup.string()
     .required()
     .oneOf([Yup.ref('password'), null], 'Passwords must match'),
 });
@@ -82,12 +86,12 @@ const StepOne = (props) => {
             <ErrorMessage name="password" />
           </div>
           <Field
-            name="confrim_password"
+            name="passwordconfirmation"
             type="password"
             placeholder="Confirm Password"
             className="form-control"
           />
-          <ErrorMessage name="confrim_password" />
+          <ErrorMessage name="passwordconfirmation" />
           <div className="btn_container">
             <Button variant="primary" type="submit" size="lg" block>
               Next
@@ -100,12 +104,8 @@ const StepOne = (props) => {
 };
 
 const stepTwoValidationSchema = Yup.object({
-  full_name: Yup.string().required().label('full_label'),
-  phone: Yup.string().required().label('phone'),
-  city: Yup.string().required().label('city'),
-  state: Yup.string().required().label('state'),
-  district: Yup.string().required().label('district'),
-  country: Yup.string().required().label('country'),
+  name: Yup.string().required().label('name'),
+  phone_no: Yup.string().required().label('phone_no'),
 });
 
 const StepTwo = (props) => {
@@ -123,11 +123,11 @@ const StepTwo = (props) => {
         <Form>
           <div className="mb-3">
             <Field
-              name="full_name"
-              placeholder="full name"
+              name="name"
+              placeholder="full names"
               className="form-control"
             />
-            <ErrorMessage name="full_name" />
+            <ErrorMessage name="name" />
           </div>
           <div className="mb-3">
             <Field
@@ -138,30 +138,14 @@ const StepTwo = (props) => {
             <ErrorMessage name="phone_no" />
           </div>
           <div className="mb-3">
-            <Field name="city" placeholder="city" className="form-control" />
-            <ErrorMessage name="city" />
+            <Field name="status" className="custom-select" as="select">
+              <option value="active">Active</option>
+              <option value="inactive">Inactive</option>
+            </Field>
+            <ErrorMessage name="status" />
           </div>
-          {/* <div className="mb-3">
-            <Field
-              name="district"
-              placeholder="district"
-              className="form-control"
-            />
-            <ErrorMessage name="district" />
-          </div>
-          <div className="mb-3">
-            <Field name="state" placeholder="state" className="form-control" />
-            <ErrorMessage name="state" />
-          </div>
-          <div className="mb-3">
-            <Field
-              name="country"
-              placeholder="country"
-              className="form-control"
-            />
-            <ErrorMessage name="country" />
-          </div> */}
-          <div class="button_container">
+
+          <div className="button_container">
             <Button variant="primary" onClick={() => props.prev(values)}>
               Back
             </Button>

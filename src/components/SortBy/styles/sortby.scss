@@ -1,0 +1,39 @@
+.sortby_section {
+    background: rgba(243, 177, 73, 0.38);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    .date_dispay_box {
+        display: flex;
+        align-items: center;
+        .date_dispay {
+            margin-left: 15px;
+            background: #fff;
+            padding: .4em 1em;
+        }
+    }
+}
+.dropdown_box {
+    position: relative;
+    .dropdown_sortby {
+        color: #000;
+    }
+    .dropdown_items {
+        position: absolute;
+        list-style: none;
+        background: #fff;
+        padding: .5em .8em;
+        z-index: 1;
+        box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+        top: 40px;
+        min-width: 150px; 
+        display: none;
+        &.active {
+            display: block;
+        }
+        .dropdown_item {
+            line-height: 25px;
+            a {
+                color: #333;
+            }
+        }
+    }
+}

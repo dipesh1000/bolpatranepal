@@ -1,0 +1,18 @@
+.user_profile_edit {
+    .save_changes_btn {
+        display: inline-block;
+        text-align: right;
+        width: 100%;
+        padding-top: 20px;
+        button {
+            background: #00B232;
+            color: #fff;
+            border: 1px solid #00B232;
+            outline: none;
+            border-radius: 0px;
+            &:focus {
+                outline: none;
+            }
+        }
+    }   
+}

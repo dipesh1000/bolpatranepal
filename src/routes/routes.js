@@ -7,6 +7,7 @@ import PricingPage from '../pages/Home/PricingPage';
 import OurServiceSinglePage from '../pages/Home/OurServiceSinglePage';
 import Dashboard from '../pages/UserDashboard/Dashboard/Dashboard';
 import ContactUsPage from '../pages/Home/ContactUsPage';
+import InterestPage from '../pages/UserDashboard/InterestPage/InterestPage';
 
 const routes = {
   home: [
@@ -57,10 +58,14 @@ const routes = {
       component: Dashboard,
       exact: true,
     },
+    {
+      path: '/user/interest',
+      component: InterestPage,
+      exact: true,
+    },
   ],
 };
 
 export default {
   ...routes,
-  home: [...routes.home, ...routes.private],
 };
