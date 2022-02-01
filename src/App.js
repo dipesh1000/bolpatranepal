@@ -8,17 +8,19 @@ import HomeIndex from './pages/Home/Index';
 import SinglePage from './pages/Home/SinglePage';
 import Toaster from './components/Toaster/Toaster';
 import PageNotFound from './pages/Home/PageNotFound/Index';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
+  const [userAuth, setUserAuth] = useState();
   const auth = useSelector((state) => state.auth);
+  console.log(userAuth, 'in auth app');
   const history = useHistory();
 
   useEffect(() => {
-    if (!auth?.isAuthenticated) {
-      return history.push('/');
+    if (auth?.isInterestChecked === false) {
+      return history.push('/user/interest');
     }
-  }, []);
+  }, [auth]);
 
   return (
     <>

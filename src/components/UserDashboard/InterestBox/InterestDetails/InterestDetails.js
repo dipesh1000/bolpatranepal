@@ -17,24 +17,24 @@ const InterestDetails = () => {
     dispatch(fetchAllProcrumentInterest());
     dispatch(fetchAllUserInterest());
   }, []);
-  const { isLoading, budgets, procurementCategories, projectTypes } =
+  const { isLoading, data, budgets, procurementCategories, projectTypes } =
     useSelector((state) => state.interest);
-
-  const { data } = useSelector((state) => state.interest);
-
   const findCheckedParams = (newData, nwdata, name) => {
-    let ans = newData?.filter((o1) => nwdata?.some((o2) => o1.id === o2.id));
-    console.log(ans, 'from ans');
+    let ans = nwdata?.filter((o1) => newData?.some((o2) => o1.id === o2.id));
+    let unMatched = newData?.filter(
+      (o1) => !nwdata?.some((o2) => o1.id === o2.id)
+    );
+
     if (ans) {
       let newObj = ans.map((item) => ({ ...item, isChecked: true }));
       if (name === 'budget') {
-        setBudgetPrams(newObj);
+        setBudgetPrams([...new Set([...unMatched, ...newObj])]);
       }
       if (name === 'cat') {
-        setProcurementCategoriesParams(newObj);
+        setProcurementCategoriesParams([...new Set([...unMatched, ...newObj])]);
       }
       if (name === 'project') {
-        setProjectTypesParams(newObj);
+        setProjectTypesParams([...new Set([...unMatched, ...newObj])]);
       }
     }
   };
@@ -45,14 +45,20 @@ const InterestDetails = () => {
     useState([]);
   const [projectTypesParams, setProjectTypesParams] = useState([]);
   useEffect(() => {
-    if (budgets) {
-      setBudgetPrams(budgets);
-    }
-    if (procurementCategories) {
-      setProcurementCategoriesParams(procurementCategories);
-    }
-    if (projectTypes) {
-      setProjectTypesParams(projectTypes);
+    if (
+      budgets.length > 0 &&
+      procurementCategories.length > 0 &&
+      projectTypes.length > 0
+    ) {
+      if (budgets) {
+        setBudgetPrams(budgets);
+      }
+      if (procurementCategories) {
+        setProcurementCategoriesParams(procurementCategories);
+      }
+      if (projectTypes) {
+        setProjectTypesParams(projectTypes);
+      }
     }
     if (data?.budgets) {
       findCheckedParams(budgets, data?.budgets, 'budget');
@@ -67,7 +73,7 @@ const InterestDetails = () => {
     if (data?.projectTypes) {
       findCheckedParams(projectTypes, data?.projectTypes, 'project');
     }
-  }, [budgets, procurementCategories, projectTypes]);
+  }, [budgets, data, procurementCategories, projectTypes]);
 
   const handleNextFrom = () => {
     setStep((step) => step + 1);

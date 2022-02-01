@@ -7,9 +7,7 @@ const UserDashboardLayouts = ({ children }) => {
   return (
     <>
       <Header />
-      <div className="dashboard_wrapper">
-        <Container>{children}</Container>
-      </div>
+      <div className="dashboard_wrapper">{children}</div>
       <Footer />
     </>
   );

@@ -10,7 +10,7 @@ const initialState = {
 };
 export const interestReducers = (state = initialState, action) => {
   switch (action.type) {
-    case actions.FETCH_ALL_PROCRUMENT_LOADING:
+    case actions.FETCH_ALL_INTEREST_LOADING:
     case actions.USER_INTEREST_LOADING:
     case actions.FETCH_USER_INTEREST_LOADING:
       return {
@@ -18,10 +18,11 @@ export const interestReducers = (state = initialState, action) => {
         isLoading: true,
       };
 
-    case actions.FETCH_ALL_PROCRUMENT_SUCCESS:
+    case actions.FETCH_ALL_INTEREST_SUCCESS:
       return {
         ...state,
         isLoading: false,
+        // data: [...action.payload.budgets, action],
         budgets: action.payload.budgets,
         procurementCategories: action.payload.procurementCategories,
         projectTypes: action.payload.projectTypes,
@@ -38,9 +39,12 @@ export const interestReducers = (state = initialState, action) => {
         ...state,
         isLoading: false,
         data: action.payload,
+        // budgets: action.payload.budgets,
+        // procurementCategories: action.payload.procurementCategories,
+        // projectTypes: action.payload.projectTypes,
       };
 
-    case actions.FETCH_ALL_PROCRUMENT_FAIL:
+    case actions.FETCH_ALL_INTEREST_FAIL:
     case actions.USER_INTEREST_FAIL:
     case actions.FETCH_USER_INTEREST_FAIL:
       return {

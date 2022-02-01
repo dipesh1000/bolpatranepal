@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 export const AdsManagement = () => {
   const { data, isLoading } = useSelector((state) => state.ads);
   const dispatch = useDispatch();
-  console.log(data, isLoading, 'from ads in ads management');
   useEffect(() => {
     dispatch(getAllAds());
   }, []);
@@ -26,11 +25,14 @@ export const AdsManagement = () => {
         <Slider {...settings}>
           {data?.ads?.length > 0 &&
             data?.ads
-              ?.filter((i) => i.type === 'Width-Type')
+              ?.filter(
+                (i) =>
+                  i?.type === 'Width-Type' && i?.position?.name === 'Banner'
+              )
               ?.map((item, index) => (
                 <div className="ads_image_container" key={index}>
                   <a target="_blank" href={item?.link}>
-                    <img src={item?.image} />
+                    <img width="100%" src={item?.image} />
                   </a>
                 </div>
               ))}

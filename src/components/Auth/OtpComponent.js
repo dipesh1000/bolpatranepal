@@ -10,7 +10,7 @@ const OtpComponent = () => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
   let guest = JSON.parse(user);
-  console.log(guest?.email);
+  console.log(guest?.email, 'Email From >>>>>>>');
   let initialValues = {
     otp: '',
     email: guest?.email,
@@ -21,7 +21,6 @@ const OtpComponent = () => {
   });
 
   const onSubmit = (values, { setSubmitting }) => {
-    console.log(values, 'From values in login components');
     dispatch(otpVerify(values));
     setSubmitting(false);
   };

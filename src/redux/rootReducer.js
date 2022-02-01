@@ -5,6 +5,7 @@ import { procrumentReducers } from '../components/Procrument/redux/Procrument.re
 import { searchingReducers } from '../components/SearchPageComponents/redux/Search.reducer';
 import { interestReducers } from '../components/UserDashboard/InterestBox/redux/Interest.reducers';
 import { profileReducers } from '../components/UserDashboard/UserAboutBox/redux/Profile.reducers';
+import { wishListReducers } from '../components/WishList/redux/reducer';
 import { errorResponseReducer } from './ErrorResponse/ErrorResponse.reducer';
 import { modalReducer } from './Modal/Modal.reducer';
 import { successResponseReducer } from './SuccessResponse/SuccessRespose.reducer';
@@ -18,5 +19,6 @@ const rootReducer = combineReducers({
   profile: profileReducers,
   interest: interestReducers,
   ads: adsReducers,
+  wishList: wishListReducers,
 });
 export default rootReducer;

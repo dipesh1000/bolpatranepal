@@ -19,7 +19,6 @@ const FilterCheckBox = ({
   const [show, setShow] = useState(false);
 
   const procrumentParamsList = (name, data) => {
-    console.log(name, data, 'line no 19');
     return loading ? (
       <Spinner animation="border" variant="secondary" />
     ) : data?.length > 0 ? (

@@ -12,9 +12,9 @@ import { returnError } from '../../../redux/ErrorResponse/ErrorResponse.action';
 
 // Login
 export const login = (data) => (dispatch) => {
-  console.log(data, 'Login Data from Action');
   userLogin(data)
     .then((res) => {
+      console.log(res?.data, 'in the user part');
       dispatch(returnSuccess(res?.data));
       dispatch(closeModal('login'));
       dispatch({
@@ -34,6 +34,7 @@ export const register = (data) => (dispatch) => {
   dispatch({ type: actions.USER_LOADING });
   userRegister(data)
     .then((res) => {
+      console.log(res, 'From res in line 36');
       dispatch(returnSuccess(res.data));
       dispatch(closeModal('register'));
       dispatch(otprequest(data));

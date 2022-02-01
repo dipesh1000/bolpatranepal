@@ -1,8 +1,9 @@
 import React from 'react';
-import { Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import RouteWithSubRoutes from '../../routes/RouteWithSubRoutes';
 import routes from '../../routes/routes';
-import PageNotFoundRoute from '../../routes/PageNotFoundRoute';
+// import PageNotFoundRoute from '../../routes/PageNotFoundRoute';
+import PageNotFound from './PageNotFound/Index';
 const HomeIndex = () => {
   console.log(routes, 'From Index Routing');
   return (
@@ -11,9 +12,9 @@ const HomeIndex = () => {
         {routes.home.map((route, index) => (
           <RouteWithSubRoutes key={index} {...route} />
         ))}
+        <Route path="*">Page Not Found</Route>
       </Switch>
     </div>
   );
 };
-
 export default HomeIndex;

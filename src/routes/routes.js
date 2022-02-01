@@ -8,6 +8,7 @@ import OurServiceSinglePage from '../pages/Home/OurServiceSinglePage';
 import Dashboard from '../pages/UserDashboard/Dashboard/Dashboard';
 import ContactUsPage from '../pages/Home/ContactUsPage';
 import InterestPage from '../pages/UserDashboard/InterestPage/InterestPage';
+import WishListPage from '../pages/UserDashboard/WishListPage';
 
 const routes = {
   home: [
@@ -61,6 +62,11 @@ const routes = {
     {
       path: '/user/interest',
       component: InterestPage,
+      exact: true,
+    },
+    {
+      path: '/user/wishlist',
+      component: WishListPage,
       exact: true,
     },
   ],

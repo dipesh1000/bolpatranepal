@@ -8,16 +8,16 @@ import { returnSuccess } from '../../../../redux/SuccessResponse/SuccessResponse
 import * as actions from './Interest.constants';
 
 export const fetchAllProcrumentInterest = () => (dispatch) => {
-  dispatch({ type: actions.FETCH_ALL_PROCRUMENT_LOADING });
+  dispatch({ type: actions.FETCH_ALL_INTEREST_LOADING });
   getAllProcrumentInterest()
     .then((res) => {
       dispatch({
-        type: actions.FETCH_ALL_PROCRUMENT_SUCCESS,
+        type: actions.FETCH_ALL_INTEREST_SUCCESS,
         payload: res?.data?.data,
       });
     })
     .catch((error) => {
-      dispatch({ type: actions.FETCH_ALL_PROCRUMENT_FAIL, error: error });
+      dispatch({ type: actions.FETCH_ALL_INTEREST_FAIL, error: error });
     });
 };
 
@@ -25,7 +25,6 @@ export const userInterest = (data) => (dispatch) => {
   dispatch({ type: actions.USER_INTEREST_LOADING });
   storeUserInterest(data)
     .then((res) => {
-      console.log(res, 'From response');
       dispatch({
         type: actions.USER_INTEREST_SUCCESS,
         payload: res.data,
@@ -40,14 +39,14 @@ export const fetchAllUserInterest = () => (dispatch) => {
   dispatch({ type: actions.FETCH_USER_INTEREST_LOADING });
   getAllUserInterest()
     .then((res) => {
-      console.log(res?.data?.data, 'fRom res');
+      // console.log(res?.data?.data, 'fRom res');
       dispatch({
         type: actions.FETCH_USER_INTEREST_SUCCESS,
         payload: res?.data?.data,
       });
     })
     .catch((error) => {
-      console.log(error.response.data.message, 'line 50');
+      // console.log(error.response.data.message, 'line 50');
       dispatch(
         returnError(
           error &&

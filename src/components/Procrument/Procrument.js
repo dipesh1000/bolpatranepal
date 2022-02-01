@@ -1,41 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import { Col, Container, Pagination, Row, Spinner } from 'react-bootstrap';
-import { useDispatch, useSelector } from 'react-redux';
-import { Procruments } from '../../FakeData/Procruments';
-import ProcrumentItem from './ProcrumentItem';
+import React from 'react';
+import { Pagination, Spinner } from 'react-bootstrap';
 import ProcurementLists from './ProcurementLists';
-import { getTenderList } from './redux/Procrument.action';
 
-const Procrument = () => {
-  const dispatch = useDispatch();
-  const [page, setPage] = useState();
-  useEffect(() => {
-    dispatch(getTenderList(page));
-  }, [page]);
-
-  const procrument = useSelector((state) => state.procrument);
-
-  let active = procrument?.data?.tenders?.pagination?.current_page;
-  let totalPage = procrument?.data?.tenders?.pagination?.total_pages;
-  let items = [];
-  for (let number = 1; number <= totalPage; number++) {
-    items.push(
-      <Pagination.Item
-        onClick={() => setPage(number)}
-        key={number}
-        active={number === active}
-      >
-        {number}
-      </Pagination.Item>
-    );
-  }
-
+const Procrument = ({ isLoading, procrument, items, title }) => {
+  // console.log(procrument, 'From procrument');
   return (
     <div>
       <div className="procruments_container">
-        <div className="main_titles">Published Today</div>
+        <div className="main_titles">{title}</div>
 
-        {procrument?.loading ? (
+        {isLoading ? (
           <div className="loading_Container">
             <Spinner animation="border" role="status">
               <span className="visually-hidden">Loading...</span>
@@ -43,7 +17,7 @@ const Procrument = () => {
           </div>
         ) : (
           <>
-            <ProcurementLists procrument={procrument?.data?.tenders?.data} />
+            <ProcurementLists procrument={procrument} />
             <Pagination>{items}</Pagination>
           </>
         )}

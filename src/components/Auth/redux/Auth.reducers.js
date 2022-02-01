@@ -7,6 +7,7 @@ const initialState = {
   isAuthenticated: user ? true : false,
   isLoading: false,
   user: JSON.parse(localStorage.getItem('user')) || null,
+  isInterestChecked: true,
 };
 
 export const authReducer = (state = initialState, action) => {
@@ -26,6 +27,7 @@ export const authReducer = (state = initialState, action) => {
         ...state,
         isAuthenticated: true,
         isLoading: false,
+        isInterestChecked: action?.payload?.interest_check,
         token: localStorage.getItem('token'),
         user: JSON.parse(localStorage.getItem('user')),
       };

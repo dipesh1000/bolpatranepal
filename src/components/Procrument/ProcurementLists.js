@@ -7,10 +7,6 @@ import { getTenderList } from './redux/Procrument.action';
 
 const ProcurementLists = ({ procrument }) => {
   const ads = useSelector((state) => state.ads);
-  const offset = (arr, offset) => [
-    ...arr.slice(offset),
-    ...arr.slice(0, offset),
-  ];
   return (
     <div>
       <Row>

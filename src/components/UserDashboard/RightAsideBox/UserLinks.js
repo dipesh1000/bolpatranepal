@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaUserAlt, FaKey, FaSave, FaSignOutAlt } from 'react-icons/fa';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUserWishList } from '../../WishList/redux/action';
+import { Badge } from 'react-bootstrap';
 
 const UserLinks = () => {
+  const dispatch = useDispatch();
+  const wishList = useSelector((state) => state.wishList);
+  useEffect(() => {
+    dispatch(getUserWishList());
+  }, []);
   return (
     <div className="user_links">
       <ul>
@@ -19,9 +27,10 @@ const UserLinks = () => {
           </Link>
         </li>
         <li>
-          <Link to="">
+          <Link to="/user/wishlist">
             <FaSave />
-            Save Bids
+            Save Bids{' '}
+            <Badge variant="primary">{wishList?.data?.data?.length}</Badge>
           </Link>
         </li>
         <li>

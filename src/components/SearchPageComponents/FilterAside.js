@@ -5,44 +5,68 @@ import DatePicker from './DatePicker';
 import FilterCheckBox from './FilterCheckBox';
 import * as yup from 'yup';
 import { useParams } from 'react-router-dom';
-import { getListSearchingWithMeta } from './redux/Search.action';
+import {
+  getFilterListByInterest,
+  getListSearchingWithMeta,
+} from './redux/Search.action';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   getBudgetParams,
   getProjectTypeParams,
   getTenderParams,
 } from '../Procrument/redux/Procrument.action';
+import {
+  fetchAllUserInterest,
+  fetchAllProcrumentInterest,
+} from '../UserDashboard/InterestBox/redux/Interest.actions';
 
 const FilterAside = () => {
   const dispatch = useDispatch();
+  const auth = useSelector((state) => state.auth);
   useEffect(() => {
-    dispatch(getTenderParams());
-    dispatch(getBudgetParams());
-    dispatch(getProjectTypeParams());
+    if (auth?.token && auth?.isAuthenticated) {
+      dispatch(fetchAllUserInterest());
+    } else {
+      dispatch(fetchAllProcrumentInterest());
+    }
   }, []);
 
-  const { procrumentParams, budgetParams, projectTypeParams, loading } =
-    useSelector((state) => state.procrument);
+  const { budgets, data, procurementCategories, projectTypes, loading } =
+    useSelector((state) => state.interest);
+  const { searchingParams } = useSelector((state) => state.searchList);
 
   const [procrument, setProcrument] = useState();
-  const searching_params = useParams();
   const [procrumentCat, setProcrumentCat] = useState();
   const [budget, setBudget] = useState();
   const [budgetCat, setBudgetCat] = useState();
   const [projectType, setProjectType] = useState();
   const [projectTypeCat, setProjectTypeCat] = useState();
 
+  const interest = useSelector((state) => state.interest);
+
   useEffect(() => {
-    if (procrumentParams) {
-      setProcrument(procrumentParams);
+    if (auth?.token && auth?.isAuthenticated) {
+      if (data?.procurementCategories) {
+        setProcrument(data?.procurementCategories);
+      }
+      if (data?.budgets) {
+        setBudget(data?.budgets);
+      }
+      if (data?.projectTypes) {
+        setProjectType(data?.projectTypes);
+      }
+    } else {
+      if (procurementCategories) {
+        setProcrument(procurementCategories);
+      }
+      if (budgets) {
+        setBudget(budgets);
+      }
+      if (projectTypes) {
+        setProjectType(projectTypes);
+      }
     }
-    if (budgetParams) {
-      setBudget(budgetParams);
-    }
-    if (projectTypeParams) {
-      setProjectType(projectTypeParams);
-    }
-  }, [procrumentParams, budgetParams, projectTypeParams]);
+  }, [budgets, procurementCategories, projectTypes, data]);
 
   const pushValueToProcrument = (tempData) => {
     let newData = tempData.filter((i) => i.isChecked).map((j) => j.id);
@@ -72,14 +96,14 @@ const FilterAside = () => {
       let tempData = procrument?.map((data) =>
         +value === data?.id ? { ...data, isChecked: checked } : data
       );
-      console.log(procrument, +value, 'From TempData');
+      // console.log(procrument, +value, 'From TempData');
       setProcrument(tempData);
       pushValueToProcrument(tempData);
     }
   };
   const handleBudgetChange = (e) => {
     const { name, value, checked } = e.target;
-    console.log(e.target, 'From e target in handlebudget');
+    // console.log(e.target, 'From e target in handlebudget');
     if (name === 'selectAllBudget') {
       let tempData = budget?.map((data) => ({
         ...data,
@@ -91,7 +115,7 @@ const FilterAside = () => {
       let tempData = budget?.map((data) =>
         +value === data?.id ? { ...data, isChecked: checked } : data
       );
-      console.log(procrument, +value, 'From TempData');
+      // console.log(procrument, +value, 'From TempData');
       setBudget(tempData);
       pushValueToBudgetCat(tempData);
     }
@@ -110,7 +134,7 @@ const FilterAside = () => {
       let tempData = projectType?.map((data) =>
         +value === data?.id ? { ...data, isChecked: checked } : data
       );
-      console.log(procrument, +value, 'From TempData');
+      // console.log(procrument, +value, 'From TempData');
       setProjectType(tempData);
       pushValueToProjectTypeCat(tempData);
     }
@@ -122,14 +146,15 @@ const FilterAside = () => {
     procurement_category: procrumentCat || [],
     budget: budgetCat || [],
     project_type: projectTypeCat || [],
-    searching_params: searching_params?.string || '',
+    searching_params: searchingParams?.searching_params || '',
   };
 
   const validationSchema = yup.object({});
 
   const onSubmit = (values, { setSubmitting }) => {
-    console.log(values, 'From Values in Filter Aside');
-    dispatch(getListSearchingWithMeta(values));
+    auth?.isAuthenticated && auth?.token
+      ? dispatch(getFilterListByInterest(values))
+      : dispatch(getListSearchingWithMeta(values));
     setSubmitting(false);
   };
 

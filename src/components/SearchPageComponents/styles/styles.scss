@@ -1,15 +1,23 @@
 .searchBanner {
-    height: 230px;
+    min-height: 230px;
     width: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     color: #fff;
     text-align: center;
-    padding-top: 14px;
     .custonBtnGroup {
         .customBtn {
             margin: 0 25px;
+        }
+    }
+    .slick-dots {
+        bottom: 15px;
+        li {
+            button {
+                background-color: #fff;
+                border-radius: 50%;
+            }
         }
     }
 }

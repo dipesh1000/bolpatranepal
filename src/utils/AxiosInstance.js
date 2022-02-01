@@ -5,10 +5,6 @@ import axios from 'axios';
 export const axiosInstance = () => {
   const baseUrl = process.env.REACT_APP_BOLPATRA;
 
-  console.log(baseUrl, 'From bBase Urkl');
-
-  // const store = Store.getState();
-  // const token = store.auth.token;
   const token = localStorage.getItem('token');
   let headers = {
     'Access-Control-Allow-Origin': '*',

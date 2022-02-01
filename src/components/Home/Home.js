@@ -13,8 +13,8 @@ const Home = () => {
   const handleShow = () => setShow(true);
   return (
     <div>
-      {/* <Banner />
-      <MainContent /> */}
+      {/* <Banner /> */}
+      {/* <MainContent /> */}
       <SearchPageComponents />
     </div>
   );

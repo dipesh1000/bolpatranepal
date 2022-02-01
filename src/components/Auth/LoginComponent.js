@@ -1,7 +1,7 @@
 import { Field } from 'formik';
 import React from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import LoginImg from '../../images/login.png';
 import logo from '../../images/logo.png';
 import { openModal } from '../../redux/Modal/Modal.action';
@@ -24,7 +24,6 @@ const LoginComponent = () => {
   });
 
   const onSubmit = (values, { setSubmitting }) => {
-    console.log(values, 'From values in login components');
     dispatch(login(values));
     setSubmitting(false);
   };
@@ -34,7 +33,6 @@ const LoginComponent = () => {
     validationSchema,
     onSubmit,
   });
-  console.log(initialValues, '>>>>>>>>>>>');
   return (
     <div className="login_box">
       <Container>

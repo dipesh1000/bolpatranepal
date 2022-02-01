@@ -16,7 +16,6 @@ const RegisterFromTest = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const dispatch = useDispatch();
   const makeRequest = (formData) => {
-    console.log('Form Submitted', formData);
     dispatch(register(formData));
   };
 

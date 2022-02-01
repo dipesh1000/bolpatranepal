@@ -24,7 +24,6 @@ const SearchSection = () => {
   const onSubmit = (values, { setSubmitting }) => {
     console.log(values, 'from values searching field');
     dispatch(getListSearching(values));
-    history.push(`/search/${values.searching_params}`);
     setSubmitting(false);
   };
 

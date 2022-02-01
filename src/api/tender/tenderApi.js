@@ -8,14 +8,10 @@ export function getSingleTendor(params) {
   return axiosInstance().get(`/api/tender/${params}`);
 }
 
-export function fetchTenderParams() {
-  return axiosInstance().get('/api/tender/procurement-category');
+export function getAllTenderByUserInterest() {
+  return axiosInstance().get('/api/tender/user-interest-tenders');
 }
 
-export function fetchBudgetParams() {
-  return axiosInstance().get('/api/tender/budget');
-}
-
-export function fetchProjectTypeParams() {
-  return axiosInstance().get('/api/tender/project-type');
+export function getFilterInterestTender() {
+  return axiosInstance().get('/api/tender/user-interest-filter');
 }

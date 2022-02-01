@@ -6,8 +6,9 @@ import { getTenderSingle } from './redux/Procrument.action';
 
 const SingleProcrument = () => {
   const { id } = useParams();
+  console.log(id, 'From id');
   const dispatch = useDispatch();
-  console.log(id, 'from param');
+  // console.log(id, 'from param');
   useEffect(() => {
     dispatch(getTenderSingle(id));
   }, []);

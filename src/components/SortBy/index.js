@@ -7,6 +7,7 @@ import {
   getAllProvince,
   getListSearchingWithMeta,
 } from '../SearchPageComponents/redux/Search.action';
+import SortByDropdown from './SortByDropdown';
 
 const SortBy = () => {
   const [provinceList, setProvinceList] = useState();
@@ -14,7 +15,6 @@ const SortBy = () => {
   const { provinces, prevSearchingMeta, loading } = useSelector(
     (state) => state.searchList
   );
-  console.log(provinces, loading, '>>>>>');
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getAllProvince());
@@ -26,16 +26,33 @@ const SortBy = () => {
     if (prevSearchingMeta) {
       setSearchData(prevSearchingMeta);
     }
-  }, [provinces]);
-  const handleClickForDist = (e, id) => {
+  }, [provinces, prevSearchingMeta]);
+  const handleClickForDist = (e, id, name) => {
     e.preventDefault();
-    setSearchData({ ...searchData, district_id: id });
+    if (name === 'province') {
+      setSearchData({ ...searchData, district: null, province: id });
+    }
+    if (name === 'district') {
+      setSearchData({ ...searchData, district: id, province: null });
+    }
     dispatch(getListSearchingWithMeta(searchData));
   };
-  console.log(searchData, 'From province list 31');
+  // const handleClickForProvince = (e, id) => {
+  //   e.preventDefault();
+  //   setSearchData({ ...searchData, province: id, district: null });
+  //   dispatch(getListSearchingWithMeta(searchData));
+  // };
+  console.log(searchData, 'From search data');
+  const [show, setShow] = useState(false);
+  const showDropdown = (e) => {
+    setShow(!show);
+  };
+  const hideDropdown = (e) => {
+    setShow(false);
+  };
   return (
     <div className="sortby_section">
-      <Navbar expand="lg">
+      <Navbar expand="lg" className="pt-0 pb-0">
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto container">
@@ -45,23 +62,33 @@ const SortBy = () => {
                 <span className="placeholder col-4"></span>
               </p>
             ) : (
-              provinceList?.length > 0 &&
-              provinceList?.map((item, index) => (
-                <NavDropdown
-                  key={index}
-                  title={item?.title}
-                  id="basic-nav-dropdown"
-                >
-                  {item?.districts?.length > 0 &&
-                    item?.districts?.map((dist) => (
-                      <NavDropdown.Item
-                        onClick={(e) => handleClickForDist(e, dist.id)}
-                      >
-                        {dist.title}
-                      </NavDropdown.Item>
-                    ))}
-                </NavDropdown>
-              ))
+              <>
+                {/* {provinceList?.length > 0 &&
+                  provinceList?.map((item, index) => (
+                    <NavDropdown
+                      key={index}
+                      title={item?.title}
+                      id={`basic-nav-dropdown${index}`}
+                      show={show}
+                      onMouseEnter={showDropdown}
+                      onMouseLeave={hideDropdown}
+                    >
+                      {item?.districts?.length > 0 &&
+                        item?.districts?.map((dist) => (
+                          <NavDropdown.Item
+                            id={`basic-nav-dropdown${index}`}
+                            onClick={(e) => handleClickForDist(e, dist.id)}
+                          >
+                            {dist.title}
+                          </NavDropdown.Item>
+                        ))}
+                    </NavDropdown>
+                  ))} */}
+                <SortByDropdown
+                  provinceList={provinceList}
+                  handleClickForDist={handleClickForDist}
+                />
+              </>
             )}
             <div className="nav-item date_dispay_box">
               <FaCalendarAlt />

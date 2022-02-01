@@ -1,13 +1,33 @@
-import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
-import Ads1 from '../../images/ads1.png';
-import Ads2 from '../../images/ads2.png';
-import Ads3 from '../../images/ads3.png';
+import React, { useEffect, useState } from 'react';
+import { Col, Container, Pagination, Row } from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
 import Procrument from '../Procrument/Procrument';
-import ProcurementLists from '../Procrument/ProcurementLists';
+// import { getTenderList } from '../Procrument/redux/Procrument.action';
 import FilterAside from '../SearchPageComponents/FilterAside';
 
 const MainContent = () => {
+  // const dispatch = useDispatch();
+  // const [page, setPage] = useState();
+  // useEffect(() => {
+  //   dispatch(getTenderList(page));
+  // }, [page]);
+
+  // const procrument = useSelector((state) => state.procrument);
+
+  // let active = procrument?.data?.tenders?.pagination?.current_page;
+  // let totalPage = procrument?.data?.tenders?.pagination?.total_pages;
+  // let items = [];
+  // for (let number = 1; number <= totalPage; number++) {
+  //   items.push(
+  //     <Pagination.Item
+  //       onClick={() => setPage(number)}
+  //       key={number}
+  //       active={number === active}
+  //     >
+  //       {number}
+  //     </Pagination.Item>
+  //   );
+  // }
   return (
     <>
       <div className="main_content_box">
@@ -17,12 +37,12 @@ const MainContent = () => {
               <FilterAside />
             </Col>
             <Col sm={6}>
-              <Procrument />
+              {/* <Procrument procrument={procrument} items={items} /> */}
             </Col>
             <Col sm={3}>
-              <div className="ads_aside">
+              {/* <div className="ads_aside">
                 <img src={Ads2} alt="Ads image" width="100%" />
-              </div>
+              </div> */}
             </Col>
           </Row>
         </Container>
